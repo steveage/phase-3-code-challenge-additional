@@ -16,7 +16,7 @@ We've provided you with a tools/console.rb file, so you will be able to test out
 
 ## Deliverables
 
-Implement all of the methods described below
+Implement all of the methods described below:
 
 ### DriveIn
 
