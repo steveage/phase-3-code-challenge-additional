@@ -30,6 +30,7 @@ Implement all of the methods described below:
   + returns the names of all movies currently playing
 
 ### MovieScreen
+#MovieScreen.new is provided for you in this lab, and takes in a movie title as a String and a capacity as an Integer
 
 + MovieScreen#cars
   + Returns an array of all cars currently at _this_ movie screen
