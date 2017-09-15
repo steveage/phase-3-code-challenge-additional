@@ -45,5 +45,5 @@ Implement all of the methods described below:
 
 + Car.all
   + Returns all cars
-+ Car.movie_screen
++ Car#movie_screen
   + Returns the movie screen _this_ car is at
