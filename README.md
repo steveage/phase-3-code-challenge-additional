@@ -16,21 +16,40 @@ We've provided you with a tools/console.rb file, so you will be able to test out
 
 ## Deliverables
 
-Implement all of the methods described below:
+Implement all of the methods described below
 
 ### DriveIn
 
 + DriveIn#screens
   + returns all movie screens
-+ DriveIn#cars
-  + this method should return all cars currently at all screens
++ DriveIn#cars_with
+  + this method takes in an integer that represents the number of people in a car. This method should return all cars that have that amount of people
 + DriveIn#full_house?
   + returns true if all movie screens are at capacity
 + DriveIn#whats_playing
   + returns the names of all movies currently playing
++ DriveIn#available_movies
+  + returns a hash with a top level key for every available movie, each key will point
+  to a hash with a key of 'available_spots', which points to the amount of spots available
+  at that screening as well as a key of 'people_watching' that points to the amount of people watching the movie.
+
+  Ex:
+  ```
+  {
+    it:{
+      available_spots: 10,
+      people_watching: 30
+    },
+    spider-man 2:{
+      available_spots: 0,
+      people_watching: 150
+    }  
+  }
+  ```
+
+
 
 ### MovieScreen
-#MovieScreen.new is provided for you in this lab, and takes in a movie title as a String and a capacity as an Integer
 
 + MovieScreen#cars
   + Returns an array of all cars currently at _this_ movie screen
@@ -41,9 +60,14 @@ Implement all of the methods described below:
 + MovieScreen.all_screens
   + Returns all movie screens
 
+
+
++ MovieScreen#how_many_viewers?
+  + returns a head count of how many people are watching the movie
+
 ### Car
 
 + Car.all
   + Returns all cars
-+ Car#movie_screen
++ Car.movie_screen
   + Returns the movie screen _this_ car is at
