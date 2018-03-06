@@ -31,7 +31,7 @@ Implement all of the methods described below
 + DriveIn#available_movies
   + returns a hash with a top level key for every available movie, each key will point
   to a hash with a key of 'available_spots', which points to the amount of spots available
-  at that screening as well as a key of 'people_watching' that points to the amount of people watching the movie.
+  at that screening as well as a key of 'people_watching' that points to the total number of people watching the movie.
 
   Ex:
   ```
