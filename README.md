@@ -31,7 +31,7 @@ Implement all of the methods described below
 + DriveIn#available_movies
   + returns a hash with a top level key for every available movie, each key will point
   to a hash with a key of 'available_spots', which points to the amount of spots available
-  at that screening as well as a key of 'people_watching' that points to the amount of people watching the movie.
+  at that screening as well as a key of 'people_watching' that points to the total number of people watching the movie.
 
   Ex:
   ```
@@ -59,9 +59,6 @@ Implement all of the methods described below
   + Adds an instance of a car to _this_ movie screen if the movie screen is not at capacity, creates a new car instance and returns the string "Enjoy!".  If the movie screen is at capacity, return a string that says 'Movie is sold out'
 + MovieScreen.all_screens
   + Returns all movie screens
-
-
-
 + MovieScreen#how_many_viewers?
   + returns a head count of how many people are watching the movie
 
@@ -69,5 +66,7 @@ Implement all of the methods described below
 
 + Car.all
   + Returns all cars
-+ Car.movie_screen
++ Car#movie_screen
   + Returns the movie screen _this_ car is at
++ Car#passenger_count
+  + Returns the number of people within _this_ car
