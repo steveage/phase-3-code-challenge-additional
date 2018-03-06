@@ -68,3 +68,5 @@ Implement all of the methods described below
   + Returns all cars
 + Car#movie_screen
   + Returns the movie screen _this_ car is at
++ Car#passenger_count
+  + Returns the number of people within _this_ car
