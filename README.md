@@ -59,9 +59,6 @@ Implement all of the methods described below
   + Adds an instance of a car to _this_ movie screen if the movie screen is not at capacity, creates a new car instance and returns the string "Enjoy!".  If the movie screen is at capacity, return a string that says 'Movie is sold out'
 + MovieScreen.all_screens
   + Returns all movie screens
-
-
-
 + MovieScreen#how_many_viewers?
   + returns a head count of how many people are watching the movie
 
@@ -69,5 +66,5 @@ Implement all of the methods described below
 
 + Car.all
   + Returns all cars
-+ Car.movie_screen
++ Car#movie_screen
   + Returns the movie screen _this_ car is at
