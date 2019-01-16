@@ -16,57 +16,88 @@ We've provided you with a tools/console.rb file, so you will be able to test out
 
 ## Deliverables
 
-Implement all of the methods described below
+Implement all of the methods described below:
 
-### DriveIn
+## Basic Methods and Attributes
 
-+ DriveIn#screens
-  + returns all movie screens
-+ DriveIn#cars_with
-  + this method takes in an integer that represents the number of people in a car. This method should return all cars that have that amount of people
-+ DriveIn#full_house?
-  + returns true if all movie screens are at capacity
-+ DriveIn#whats_playing
-  + returns the names of all movies currently playing
-+ DriveIn#available_movies
-  + returns a hash with a top level key for every available movie, each key will point
-  to a hash with a key of 'available_spots', which points to the amount of spots available
-  at that screening as well as a key of 'people_watching' that points to the total number of people watching the movie.
+### `DriveIn`
 
-  Ex:
-  ```
-  {
-    it:{
-      available_spots: 10,
-      people_watching: 30
-    },
-    spider-man 2:{
-      available_spots: 0,
-      people_watching: 150
-    }  
-  }
-  ```
+A drive-in should be initialized with a `name` as a string. The name **cannot** be changed after the drive-in is initialized.
 
+---
 
+### `MovieScreen`
 
-### MovieScreen
+A movie screen should be initialized with a `movie` object, `capacity` (as an integer), and a `drive_in` object.
 
-+ MovieScreen#cars
-  + Returns an array of all cars currently at _this_ movie screen
-+ MovieScreen#at_capacity?
-  + Returns a boolean.  The return will be true if the number of cars at _this_ movie screen is at capacity
-+ MovieScreen#add_car
-  + Adds an instance of a car to _this_ movie screen if the movie screen is not at capacity, creates a new car instance and returns the string "Enjoy!".  If the movie screen is at capacity, return a string that says 'Movie is sold out'
-+ MovieScreen.all_screens
-  + Returns all movie screens
-+ MovieScreen#how_many_viewers?
-  + returns a head count of how many people are watching the movie
++ `MovieScreen.all_screens`
+  + Returns an array of all movie screens that have been created.
 
-### Car
+---
 
-+ Car.all
-  + Returns all cars
-+ Car#movie_screen
-  + Returns the movie screen _this_ car is at
-+ Car#passenger_count
-  + Returns the number of people within _this_ car
+### `Car`
+
+A car should be initialized with a `passenger_count` (as an integer).
+
++ `Car#passenger_count`
+  + Returns the number of passengers in the car.
++ `Car#movie_screen=`
+  + Assigns a screen object to a particular car. **Note:** this might happen _after_ a car has already been created.
++ `Car#movie_screen`
+  + Returns the movie screen that a particular car is associated with
++ `Car.all`
+  + Returns an array of all car instances that have been created.
+
+---
+
+## Aggregate Methods
+
+### `MovieScreen`
+
++ `MovieScreen#cars`
+  + Returns an array of all cars currently at _this_ movie screen.
++ `MovieScreen#at_capacity?`
+  + Returns a boolean. The return will be true if the number of cars at _this_ movie screen is the same as its capacity.
++ `MovieScreen#add_car`
+  + Associates a car object with _this_ movie screen.
+    + If the movie screen is _not_ at capacity, it associates the objects and returns the string "Enjoy!".
+    + If the movie screen is at capacity, return the string "Sold Out!"
++ `MovieScreen#how_many_viewers?`
+  + Returns the total number of people viewing the movie
+
+---
+
+### `DriveIn`
+
++ `DriveIn#screens`
+  + Returns an array of all movie screens at _this_ drive-in.
++ `DriveIn#cars_with`
+  + Accepts a string as a single argument.
+  + Returns an array of all cars at _this_ drive-in with a given number of passengers inside.
++ `DriveIn#full_house?`
+  + Returns true if all movie screens at _this_ drive-in are at capacity.
++ `DriveIn#whats_playing`
+  + Returns an array of all the names of the movies playing at _this_ drive-in.
++ `DriveIn#available_movies`
+  + Returns a hash with a top-level key representing every available movie at _this_ drive-in.
+  + Each key will point to _another hash_ with two keys:
+    + `available_spots`
+      + Should represent the number of spots available at this movie.
+    + `people_watching`
+      + Should represent the total number of people watching this movie.
+
+For example:
+```ruby
+{
+  the_shawshank_redemption: {
+    available_spots: 10,
+    people_watching: 30
+  },
+  spider_man_2: {
+    available_spots: 0,
+    people_watching: 150
+  }  
+}
+```
+
+---
