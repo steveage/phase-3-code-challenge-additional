@@ -12,8 +12,6 @@ Do your best to follow Ruby best practices. For example, use higher-level array 
 
 We've provided you with a tools/console.rb file, so you will be able to test out the methods that you write here.
 
-**To Submit** - once you've completed all the deliverables, please copy/paste your three class definitions into the `solution.rb` file. Please don't submit the lab until we give you the signal.
-
 ## Deliverables
 
 Implement all of the methods described below
@@ -34,7 +32,7 @@ Implement all of the methods described below
   at that screening as well as a key of 'people_watching' that points to the total number of people watching the movie.
 
   Ex:
-  ```
+  ```ruby
   {
     it:{
       available_spots: 10,
