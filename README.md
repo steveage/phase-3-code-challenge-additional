@@ -12,6 +12,9 @@ Do your best to follow Ruby best practices. For example, use higher-level array 
 
 We've provided you with a tools/console.rb file, so you will be able to test out the methods that you write here.
 
+  - **NOTE ABOUT TESTING:** You must run `tools/console.rb`––`$ ruby tools/console.rb`––from this assignment's **root directory**, not from inside the tools directory. You'll be able to test out the methods that you write here. Take a look at that file to see how you can pre-define variables and create object instances, rather than manually creating test data each time you enter a `pry` session.
+
+
 **To Submit** - once you've completed all the deliverables, please copy/paste your three class definitions into the `solution.rb` file. Please don't submit the lab until we give you the signal.
 
 ## Deliverables
