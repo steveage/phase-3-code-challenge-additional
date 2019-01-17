@@ -103,11 +103,11 @@ A car should be initialized with a `passenger_count` (as an integer).
 For example:
 ```ruby
 {
-  :'The Shawshank Redemption' => {
+  'The Shawshank Redemption': {
     available_spots: 10,
     people_watching: 30
   },
-  :'Spider Man 2' => {
+  'Spider Man 2': {
     available_spots: 0,
     people_watching: 150
   }  
