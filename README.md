@@ -2,11 +2,11 @@
 
 ## Topics
 
-- Classes vs Instances
-- Variable Scope ( Class, Instance, Local )
-- Object Relationships
-- Arrays and Array Methods
-- Class Methods
++ Classes vs Instances
++ Variable Scope ( Class, Instance, Local )
++ Object Relationships
++ Arrays and Array Methods
++ Class Methods
 
 ## Your Task
 
@@ -14,7 +14,7 @@ For this challenge, you have been given the job of creating a command line inter
 
  ## Notes
 
- Your goal is to build out all of the methods listed in the deliverables and connect the required classes to a command line interface.
+Your goal is to build out all of the methods listed in the deliverables and connect the required classes to a command line interface.
 
  We've provided you with a console that you can use to test your code. To enter a console session, run `ruby tools/console.rb` from the command line. You'll be able to test out the methods that you write here. Take a look at that file to see how you can pre-define variables and create object instances, rather than manually doing it in every single console session.
 
