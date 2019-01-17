@@ -12,7 +12,7 @@
 
 For this challenge, you have been given the job of creating a command line interface for your local drive-in movie theater, Happy's Sunset Drive-In! You have been asked to create a tracking tool that allows employees to know how many cars are at each movie screen.  The drive-in has many screens, and each screen can have many cars.  For the safety of all viewers, there is a limit to the number of cars that can be at a movie screen.  
 
- ## Notes
+## Notes
 
 Your goal is to build out all of the methods listed in the deliverables and connect the required classes to a command line interface.
 
