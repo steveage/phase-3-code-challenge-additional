@@ -1,4 +1,4 @@
-# Object Relations Assessment
+# Object Relations Code Challenge
 
 ## Topics
 
