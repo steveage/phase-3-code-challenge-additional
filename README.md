@@ -49,10 +49,6 @@ A car should be initialized with a `passenger_count` (as an integer).
 
 + `Car#passenger_count`
   + Returns the number of passengers in the car.
-+ `Car#movie_screen=`
-  + Assigns a screen object to a particular car. **Note:** this might happen _after_ a car has already been created.
-+ `Car#movie_screen`
-  + Returns the movie screen that a particular car is associated with
 + `Car.all`
   + Returns an array of all car instances that have been created.
 
@@ -72,6 +68,14 @@ A car should be initialized with a `passenger_count` (as an integer).
     + If the movie screen is at capacity, return the string "Sold Out!"
 + `MovieScreen#how_many_viewers?`
   + Returns the total number of people viewing the movie
+
+---
+
+### `Car`
++ `Car#movie_screen=`
+  + Assigns a screen object to a particular car. **Note:** this might happen _after_ a car has already been created.
++ `Car#movie_screen`
+  + Returns the movie screen that a particular car is associated with
 
 ---
 
