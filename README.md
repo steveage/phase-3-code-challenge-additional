@@ -56,26 +56,28 @@ A car should be initialized with a `passenger_count` (as an integer).
 
 ## Aggregate Methods
 
-### `MovieScreen`
-
-+ `MovieScreen#cars`
-  + Returns an array of all cars currently at _this_ movie screen.
-+ `MovieScreen#at_capacity?`
-  + Returns a boolean. The return will be true if the number of cars at _this_ movie screen is the same as its capacity.
-+ `MovieScreen#add_car`
-  + Associates a car object with _this_ movie screen.
-    + If the movie screen is _not_ at capacity, it associates the objects and returns the string "Enjoy!".
-    + If the movie screen is at capacity, return the string "Sold Out!"
-+ `MovieScreen#how_many_viewers?`
-  + Returns the total number of people viewing the movie
-
----
 
 ### `Car`
 + `Car#movie_screen=`
   + Assigns a screen object to a particular car. **Note:** this might happen _after_ a car has already been created.
 + `Car#movie_screen`
   + Returns the movie screen that a particular car is associated with
+
+---
+
+### `MovieScreen`
++ `MovieScreen#cars`
+  + Returns an array of all cars currently at _this_ movie screen.
++ `MovieScreen#how_many_viewers`
+  + Returns the total number of people viewing the movie
++ `MovieScreen#available_spots`
+  + Returns the number of spots available at a particular screen
++ `MovieScreen#at_capacity?`
+  + Returns a boolean. The return will be true if the number of cars at _this_ movie screen is the same as its capacity.
++ `MovieScreen#add_car`
+  + Associates a car object with _this_ movie screen.
+    + If the movie screen is _not_ at capacity, it associates the objects and returns the string "Enjoy!".
+    + If the movie screen is at capacity, return the string "Sold Out!"
 
 ---
 
