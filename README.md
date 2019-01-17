@@ -20,6 +20,7 @@ Your goal is to build out all of the methods listed in the deliverables and conn
 
  **Remember!** This is a code challenge without tests. You cannot run `rspec` you cannot run `learn`. You'll need to create your own sample instances for testing purposes. Make sure your associations and methods work in the console before submitting.
 
+---
 
 ## Deliverables
 
@@ -41,7 +42,7 @@ Implement all of the methods described below
   at that screening as well as a key of 'people_watching' that points to the total number of people watching the movie.
 
   Ex:
-  ```
+  ```ruby
   {
     it:{
       available_spots: 10,
