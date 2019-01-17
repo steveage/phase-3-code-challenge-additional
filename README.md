@@ -36,7 +36,7 @@ A drive-in should be initialized with a `name` as a string. The name **cannot** 
 
 ### `MovieScreen`
 
-A movie screen should be initialized with a `movie` object, `capacity` (as an integer), and a `drive_in` object.
+A movie screen should be initialized with a `movie` title as a string, `capacity` (as an integer), and a `drive_in` object.
 
 + `MovieScreen.all_screens`
   + Returns an array of all movie screens that have been created.
