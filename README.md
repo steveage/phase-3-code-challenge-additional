@@ -1,30 +1,38 @@
-# Object Relations Code Challenge
+# Object Relations Code Challenge - DriveIn
+
+For this challenge, we will be working with a drive-in movie domain.
+
+We have three models: `DriveIn`, `MovieScreen`, and `Car`.
+
+For this challenge, a `DriveIn` has many `MovieScreen`s, a `MovieScreen` has many `Car`s, and a `Car` belongs to a `MovieScreen`.
+
+A `DriveIn` has many `Car`s through it's `MovieScreen`s. A `Car` is only at one `DriveIn`.
+
+Note: it can be helpful to draw your domain on paper or on a whiteboard before you start coding. Remember to identify a single source of truth for your data.
 
 ## Topics
 
-+ Classes vs Instances
-+ Variable Scope ( Class, Instance, Local )
-+ Object Relationships
-+ Arrays and Array Methods
-+ Class Methods
+- Classes and Instances
+- Class and Instance Methods
+- Variable Scope
+- Object Relationships
+- Arrays and Array Methods
 
-## Your Task
+## Instructions
 
-For this challenge, you have been given the job of creating a command line interface for your local drive-in movie theater, Happy's Sunset Drive-In! You have been asked to create a tracking tool that allows employees to know how many cars are at each movie screen.  The drive-in has many screens, and each screen can have many cars.  For the safety of all viewers, there is a limit to the number of cars that can be at a movie screen.  
+Build out all of the methods listed in the deliverables. The methods build on each other, so you should write the methods in order.
 
-## Notes
+**Remember!** This code challenge does not have tests. You cannot run `rspec` and you cannot run `learn`. You'll need to create your own sample instances so that you can try out your code on your own. Make sure your associations and methods work in the console before submitting.
 
-Your goal is to build out all of the methods listed in the deliverables and connect the required classes to a command line interface.
+We've provided you with a console that you can use to test your code. To enter a console session, run `ruby tools/console.rb` from the command line. You'll be able to test out the methods that you write here. Add code to the `tools/console.rb` file to define variables and create sample instances of your objects.
 
- We've provided you with a console that you can use to test your code. To enter a console session, run `ruby tools/console.rb` from the command line. You'll be able to test out the methods that you write here. Take a look at that file to see how you can pre-define variables and create object instances, rather than manually doing it in every single console session.
+Writing error-free code is more important than completing all of the deliverables listed - prioritize writing methods that work over writing more methods that don't work. You should test your code in the console as you write.
 
- **Remember!** This is a code challenge without tests. You cannot run `rspec` you cannot run `learn`. You'll need to create your own sample instances for testing purposes. Make sure your associations and methods work in the console before submitting.
-
----
+Do your best to follow Ruby best practices. For example, use higher-level array methods such as `map`, `select`, and `find` when appropriate in place of `each`. When you encounter duplicated logic, you can extract it into a shared helper method.
 
 ## Deliverables
 
-Implement all of the methods described below:
+Write the following methods in the classes in the files provided. Feel free to build out any helper methods if needed.
 
 ## Basic Methods and Attributes
 
@@ -38,8 +46,8 @@ A drive-in should be initialized with a `name` as a string. The name **cannot** 
 
 A movie screen should be initialized with a `movie` title as a string, `capacity` (as an integer), and a `drive_in` object.
 
-+ `MovieScreen.all_screens`
-  + Returns an array of all movie screens that have been created.
+- `MovieScreen.all_screens`
+  - Returns an array of all movie screens that have been created.
 
 ---
 
@@ -47,60 +55,62 @@ A movie screen should be initialized with a `movie` title as a string, `capacity
 
 A car should be initialized with a `passenger_count` (as an integer).
 
-+ `Car#passenger_count`
-  + Returns the number of passengers in the car.
-+ `Car.all`
-  + Returns an array of all car instances that have been created.
+- `Car#passenger_count`
+  - Returns the number of passengers in the car.
+- `Car.all`
+  - Returns an array of all car instances that have been created.
 
 ---
 
 ## Aggregate Methods
 
-
 ### `Car`
-+ `Car#movie_screen=`
-  + Assigns a screen object to a particular car. **Note:** this might happen _after_ a car has already been created.
-+ `Car#movie_screen`
-  + Returns the movie screen that a particular car is associated with
+
+- `Car#movie_screen=`
+  - Assigns a screen object to a particular car. **Note:** this might happen _after_ a car has already been created.
+- `Car#movie_screen`
+  - Returns the movie screen that a particular car is associated with
 
 ---
 
 ### `MovieScreen`
-+ `MovieScreen#cars`
-  + Returns an array of all cars currently at _this_ movie screen.
-+ `MovieScreen#how_many_viewers`
-  + Returns the total number of people viewing the movie
-+ `MovieScreen#available_spots`
-  + Returns the number of spots available at a particular screen
-+ `MovieScreen#at_capacity?`
-  + Returns a boolean. The return will be true if the number of cars at _this_ movie screen is the same as its capacity.
-+ `MovieScreen#add_car`
-  + Associates a car object with _this_ movie screen.
-    + If the movie screen is _not_ at capacity, it associates the objects and returns the string "Enjoy!".
-    + If the movie screen is at capacity, return the string "Sold Out!"
+
+- `MovieScreen#cars`
+  - Returns an array of all cars currently at _this_ movie screen.
+- `MovieScreen#how_many_viewers`
+  - Returns the total number of people viewing the movie
+- `MovieScreen#available_spots`
+  - Returns the number of spots available at a particular screen
+- `MovieScreen#at_capacity?`
+  - Returns a boolean. The return will be true if the number of cars at _this_ movie screen is the same as its capacity.
+- `MovieScreen#add_car`
+  - Associates a car object with _this_ movie screen.
+    - If the movie screen is _not_ at capacity, it associates the objects and returns the string "Enjoy!".
+    - If the movie screen is at capacity, return the string "Sold Out!"
 
 ---
 
 ### `DriveIn`
 
-+ `DriveIn#screens`
-  + Returns an array of all movie screens at _this_ drive-in.
-+ `DriveIn#cars_with`
-  + Accepts a string as a single argument.
-  + Returns an array of all cars at _this_ drive-in with a given number of passengers inside.
-+ `DriveIn#full_house?`
-  + Returns true if all movie screens at _this_ drive-in are at capacity.
-+ `DriveIn#whats_playing`
-  + Returns an array of all the names of the movies playing at _this_ drive-in.
-+ `DriveIn#available_movies`
-  + Returns a hash with a top-level key representing every available movie at _this_ drive-in.
-  + Each key will point to _another hash_ with two keys:
-    + `available_spots`
-      + Should represent the number of spots available at this movie.
-    + `people_watching`
-      + Should represent the total number of people watching this movie.
+- `DriveIn#screens`
+  - Returns an array of all movie screens at _this_ drive-in.
+- `DriveIn#cars_with`
+  - Accepts a string as a single argument.
+  - Returns an array of all cars at _this_ drive-in with a given number of passengers inside.
+- `DriveIn#full_house?`
+  - Returns true if all movie screens at _this_ drive-in are at capacity.
+- `DriveIn#whats_playing`
+  - Returns an array of all the names of the movies playing at _this_ drive-in.
+- `DriveIn#available_movies`
+  - Returns a hash with a top-level key representing every available movie at _this_ drive-in.
+  - Each key will point to _another hash_ with two keys:
+    - `available_spots`
+      - Should represent the number of spots available at this movie.
+    - `people_watching`
+      - Should represent the total number of people watching this movie.
 
 For example:
+
 ```ruby
 {
   'The Shawshank Redemption': {
@@ -110,7 +120,7 @@ For example:
   'Spider Man 2': {
     available_spots: 0,
     people_watching: 150
-  }  
+  }
 }
 ```
 
