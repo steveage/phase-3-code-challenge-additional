@@ -34,76 +34,93 @@ Do your best to follow Ruby best practices. For example, use higher-level array 
 
 Write the following methods in the classes in the files provided. Feel free to build out any helper methods if needed.
 
-## Basic Methods and Attributes
+Deliverables use the notation `#` for instance methods, and `.` for class methods.
 
-### `DriveIn`
+Some of the methods listed are provided to you in the starter code. You should check that they work correctly, and that you understand them.
 
-A drive-in should be initialized with a `name` as a string. The name **cannot** be changed after the drive-in is initialized.
+### Initializers, Readers, and Writers
 
----
+#### DriveIn
 
-### `MovieScreen`
+- `DriveIn.initialize(name)`
+  - A drive-in should be initialized with a `name` as a string.
+- `DriveIn#name`
+  - should return the name of the `DriveIn`
+  - The name **cannot** be changed after the drive-in is initialized.
 
-A movie screen should be initialized with a `movie` title as a string, `capacity` (as an integer), and a `drive_in` object.
+#### MovieScreen
 
+- `MovieScreen.initialize(movie_title, capacity, drive_in)`
+  - A movie screen should be initialized with a movie title as a string, capacity (as an integer), and a `drive_in` object.
+- `MovieScreen#movie_title`
+  - should return the movie title
+  - The movie title **cannot** be changed after the MovieScreen is initialized.
+- `MovieScreen#capacity`
+  - should return the `MovieScreen`'s capacity
+  - The capacity **cannot** be changed after the MovieScreen is initialized.
+- `MovieScreen#drive_in`
+  - should return the `DriveIn` associated with this `MovieScreen`
+  - The drive in **cannot** be changed after the MovieScreen is initialized.
 - `MovieScreen.all_screens`
   - Returns an array of all movie screens that have been created.
 
----
+#### Car
 
-### `Car`
-
-A car should be initialized with a `passenger_count` (as an integer).
-
+- `Car.initialize(passenger_count)`
+  - A car should be initialized with a `passenger_count` (as an integer).
 - `Car#passenger_count`
   - Returns the number of passengers in the car.
+  - the passenger count **cannot** be changed after the `Car` is initialized
 - `Car.all`
   - Returns an array of all car instances that have been created.
 
----
+### Object Relationship Methods
 
-## Aggregate Methods
+#### Car
 
-### `Car`
-
-- `Car#movie_screen=`
-  - Assigns a screen object to a particular car. **Note:** this might happen _after_ a car has already been created.
 - `Car#movie_screen`
   - Returns the movie screen that a particular car is associated with
+- `Car#movie_screen=`
+  - Assigns a screen object to a particular car.
+  - **Note:** this will happen _after_ a car has already been created.
 
----
-
-### `MovieScreen`
+#### MovieScreen
 
 - `MovieScreen#cars`
   - Returns an array of all cars currently at _this_ movie screen.
-- `MovieScreen#how_many_viewers`
-  - Returns the total number of people viewing the movie
-- `MovieScreen#available_spots`
-  - Returns the number of spots available at a particular screen
-- `MovieScreen#at_capacity?`
-  - Returns a boolean. The return will be true if the number of cars at _this_ movie screen is the same as its capacity.
-- `MovieScreen#add_car`
-  - Associates a car object with _this_ movie screen.
-    - If the movie screen is _not_ at capacity, it associates the objects and returns the string "Enjoy!".
-    - If the movie screen is at capacity, return the string "Sold Out!"
 
----
-
-### `DriveIn`
+#### DriveIn
 
 - `DriveIn#screens`
   - Returns an array of all movie screens at _this_ drive-in.
-- `DriveIn#cars_with`
-  - Accepts a string as a single argument.
-  - Returns an array of all cars at _this_ drive-in with a given number of passengers inside.
+
+### Aggregate Methods
+
+#### MovieScreen
+
+- `MovieScreen#how_many_viewers`
+  - Returns the total number of people viewing the movie
+- `MovieScreen#at_capacity?`
+  - Returns a boolean. If the number of cars at this movie screen is equal to or above the capacity, return `true`. Otherwise, return `false`.
+- `MovieScreen#available_spots`
+  - Returns the number of spots for cars available at a particular screen - the amount of the capacity that isn't currently occupied by a car
+- `MovieScreen#add_car(car)`
+  - Takes in a `Car` instance as the argument
+  - Associates the `Car` with _this_ movie screen.
+    - If the movie screen is _not_ at capacity, it associates the objects and returns the string "Enjoy!".
+    - If the movie screen is at capacity, it should return the string "Sold Out!" (and does not associate the car to the movie screen)
+
+#### DriveIn
+
 - `DriveIn#full_house?`
   - Returns true if all movie screens at _this_ drive-in are at capacity.
 - `DriveIn#whats_playing`
   - Returns an array of all the names of the movies playing at _this_ drive-in.
 - `DriveIn#available_movies`
-  - Returns a hash with a top-level key representing every available movie at _this_ drive-in.
-  - Each key will point to _another hash_ with two keys:
+  - Returns an array with a representing every available movie at _this_ drive-in.
+  - Each item in the will point to _a hash_ with three keys:
+    - `movie`
+      - name of the movie
     - `available_spots`
       - Should represent the number of spots available at this movie.
     - `people_watching`
@@ -112,19 +129,19 @@ A car should be initialized with a `passenger_count` (as an integer).
 For example:
 
 ```ruby
-{
-  'The Shawshank Redemption': {
+[
+  {
+    movie: 'The Shawshank Redemption',
     available_spots: 10,
     people_watching: 30
   },
-  'Spider Man 2': {
+  {
+    movie: 'Spider Man 2',
     available_spots: 0,
     people_watching: 150
   }
-}
+]
 ```
-
----
 
 ## Rubric
 
