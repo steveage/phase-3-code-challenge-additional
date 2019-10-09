@@ -70,7 +70,7 @@ Some of the methods listed are provided to you in the starter code. You should c
   - A car should be initialized with a `passenger_count` (as an integer).
 - `Car#passenger_count`
   - Returns the number of passengers in the car.
-  - the passenger count **cannot** be changed after the `Car` is initialized
+  - the passenger count **can** be changed after the `Car` is initialized
 - `Car.all`
   - Returns an array of all car instances that have been created.
 
