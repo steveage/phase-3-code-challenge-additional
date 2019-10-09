@@ -6,7 +6,7 @@ We have three models: `DriveIn`, `MovieScreen`, and `Car`.
 
 For this challenge, a `DriveIn` has many `MovieScreen`s, a `MovieScreen` has many `Car`s, and a `Car` belongs to a `MovieScreen`.
 
-A `DriveIn` has many `Car`s through it's `MovieScreen`s. A `Car` is only at one `DriveIn`.
+A `DriveIn` has many `Car`s through its `MovieScreen`s. A `Car` is only at one `DriveIn`.
 
 Note: it can be helpful to draw your domain on paper or on a whiteboard before you start coding. Remember to identify a single source of truth for your data.
 
