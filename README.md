@@ -42,7 +42,7 @@ Some of the methods listed are provided to you in the starter code. You should c
 
 #### DriveIn
 
-- `DriveIn.initialize(name)`
+- `DriveIn#initialize(name)`
   - A drive-in should be initialized with a `name` as a string.
 - `DriveIn#name`
   - should return the name of the `DriveIn`
@@ -50,7 +50,7 @@ Some of the methods listed are provided to you in the starter code. You should c
 
 #### MovieScreen
 
-- `MovieScreen.initialize(movie_title, capacity, drive_in)`
+- `MovieScreen#initialize(movie_title, capacity, drive_in)`
   - A movie screen should be initialized with a movie title as a string, capacity (as an integer), and a `drive_in` object.
 - `MovieScreen#movie_title`
   - should return the movie title
@@ -66,7 +66,7 @@ Some of the methods listed are provided to you in the starter code. You should c
 
 #### Car
 
-- `Car.initialize(passenger_count)`
+- `Car#initialize(passenger_count)`
   - A car should be initialized with a `passenger_count` (as an integer).
 - `Car#passenger_count`
   - Returns the number of passengers in the car.
