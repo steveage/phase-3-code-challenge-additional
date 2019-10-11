@@ -78,70 +78,44 @@ Some of the methods listed are provided to you in the starter code. You should c
 
 #### Car
 
-- `Car#movie_screen`
-  - Returns the movie screen that a particular car is associated with
-- `Car#movie_screen=`
-  - Assigns a screen object to a particular car.
+- `Car#current_movie_screen`
+  - Returns the current movie screen that a particular car is associated with.
+- `Car#current_movie_screen=`
+  - Assigns a movie screen object to a particular car to indicate which movie screen that car is currently at.
   - **Note:** this will happen _after_ a car has already been created.
 
 #### MovieScreen
 
 - `MovieScreen#cars`
-  - Returns an array of all cars currently at _this_ movie screen.
+  - Returns an array of all cars currently at this movie screen.
 
 #### DriveIn
 
 - `DriveIn#screens`
-  - Returns an array of all movie screens at _this_ drive-in.
+  - Returns an array of all movie screens at this drive-in.
 
 ### Aggregate Methods
 
 #### MovieScreen
 
-- `MovieScreen#how_many_viewers`
-  - Returns the total number of people viewing the movie
+- `MovieScreen#number_of_viewers`
+  - Returns the total number of passengers viewing the movie, from all the cars currently at this movie screen
 - `MovieScreen#at_capacity?`
-  - Returns a boolean. If the number of cars at this movie screen is equal to or above the capacity, return `true`. Otherwise, return `false`.
+  - Returns a boolean. If the number of cars at this movie screen is equal to or above the capacity of the movie screen, returns `true`. Otherwise, returns `false`.
 - `MovieScreen#available_spots`
-  - Returns the number of spots for cars available at a particular screen - the amount of the capacity that isn't currently occupied by a car
+  - Returns the number of spots for cars available at this movie screen. This should be the capacity minus the number of cars currently at this movie screen.
 - `MovieScreen#add_car(car)`
   - Takes in a `Car` instance as the argument
-  - Associates the `Car` with _this_ movie screen.
-    - If the movie screen is _not_ at capacity, it associates the objects and returns the string "Enjoy!".
-    - If the movie screen is at capacity, it should return the string "Sold Out!" (and does not associate the car to the movie screen)
+  - Depending on the available capacity of the movie screen, associates the `Car` with this movie screen.
+    - If the movie screen is _not_ at capacity, updates the car's current movie screen and returns the string `"Enjoy!"`.
+    - If the movie screen is at capacity, it should return the string "Sold Out!", and should not associate the car to the movie screen.
 
 #### DriveIn
 
+- `DriveIn#whats_playing`
+  - Returns an array of all the names of the movies playing at the movie screens at this drive-in.
 - `DriveIn#full_house?`
   - Returns true if all movie screens at _this_ drive-in are at capacity.
-- `DriveIn#whats_playing`
-  - Returns an array of all the names of the movies playing at _this_ drive-in.
-- `DriveIn#available_movies`
-  - Returns an array with a representing every available movie at _this_ drive-in.
-  - Each item in the will point to _a hash_ with three keys:
-    - `movie`
-      - name of the movie
-    - `available_spots`
-      - Should represent the number of spots available at this movie.
-    - `people_watching`
-      - Should represent the total number of people watching this movie.
-
-For example:
-
-```ruby
-[
-  {
-    movie: 'The Shawshank Redemption',
-    available_spots: 10,
-    people_watching: 30
-  },
-  {
-    movie: 'Spider Man 2',
-    available_spots: 0,
-    people_watching: 150
-  }
-]
-```
 
 ## Rubric
 
