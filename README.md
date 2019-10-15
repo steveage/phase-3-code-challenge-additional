@@ -20,6 +20,8 @@ A `DriveIn` has many `Car`s through its `MovieScreen`s. A `Car` is only at one `
 
 ## Instructions
 
+To get started, run `bundle install` while inside of this directory.
+
 Build out all of the methods listed in the deliverables. The methods are listed in a suggested order, but you can feel free to tackle the ones you think are easiest. Be careful: some of the later methods rely on earlier ones.
 
 **Remember!** This code challenge does not have tests. You cannot run `rspec` and you cannot run `learn`. You'll need to create your own sample instances so that you can try out your code on your own. Make sure your associations and methods work in the console before submitting.
